@@ -1,0 +1,736 @@
+[
+    {
+        "associations": [
+            {
+                "toEntity": "ACCOUNT_CCODES",
+                "toMultiplicity": "*",
+                "fromEntity": "GL_ACCT_MASTER_SAVE_RFC_Request",
+                "fromMultiplicity": "1",
+                "name": "GL_ACCT_MASTER_SAVE_RFC_Request_ACCOUNT_CCODES"
+            },
+            {
+                "toEntity": "ACCOUNT_CCODES",
+                "toMultiplicity": "*",
+                "fromEntity": "GL_ACCT_MASTER_SAVE_RFC_Response",
+                "fromMultiplicity": "1",
+                "name": "GL_ACCT_MASTER_SAVE_RFC_Response_ACCOUNT_CCODES"
+            },
+            {
+                "toEntity": "KEYY",
+                "toMultiplicity": "1",
+                "fromEntity": "ACCOUNT_CCODES",
+                "fromMultiplicity": "1",
+                "name": "ACCOUNT_CCODES_KEYY"
+            },
+            {
+                "toEntity": "DATA",
+                "toMultiplicity": "1",
+                "fromEntity": "ACCOUNT_CCODES",
+                "fromMultiplicity": "1",
+                "name": "ACCOUNT_CCODES_DATA"
+            },
+            {
+                "toEntity": "INFO",
+                "toMultiplicity": "1",
+                "fromEntity": "ACCOUNT_CCODES",
+                "fromMultiplicity": "1",
+                "name": "ACCOUNT_CCODES_INFO"
+            },
+            {
+                "toEntity": "ACCOUNT_COA",
+                "toMultiplicity": "*",
+                "fromEntity": "GL_ACCT_MASTER_SAVE_RFC_Request",
+                "fromMultiplicity": "1",
+                "name": "GL_ACCT_MASTER_SAVE_RFC_Request_ACCOUNT_COA"
+            },
+            {
+                "toEntity": "KEYY__0",
+                "toMultiplicity": "1",
+                "fromEntity": "ACCOUNT_COA",
+                "fromMultiplicity": "1",
+                "name": "ACCOUNT_COA_KEYY__0"
+            },
+            {
+                "toEntity": "DATA__1",
+                "toMultiplicity": "1",
+                "fromEntity": "ACCOUNT_COA",
+                "fromMultiplicity": "1",
+                "name": "ACCOUNT_COA_DATA__1"
+            },
+            {
+                "toEntity": "INFO__2",
+                "toMultiplicity": "1",
+                "fromEntity": "ACCOUNT_COA",
+                "fromMultiplicity": "1",
+                "name": "ACCOUNT_COA_INFO__2"
+            },
+            {
+                "toEntity": "ACCOUNT_KEYWORDS",
+                "toMultiplicity": "*",
+                "fromEntity": "GL_ACCT_MASTER_SAVE_RFC_Request",
+                "fromMultiplicity": "1",
+                "name": "GL_ACCT_MASTER_SAVE_RFC_Request_ACCOUNT_KEYWORDS"
+            },
+            {
+                "toEntity": "ACCOUNT_KEYWORDS",
+                "toMultiplicity": "*",
+                "fromEntity": "GL_ACCT_MASTER_SAVE_RFC_Response",
+                "fromMultiplicity": "1",
+                "name": "GL_ACCT_MASTER_SAVE_RFC_Response_ACCOUNT_KEYWORDS"
+            },
+            {
+                "toEntity": "ACCOUNT_NAMES",
+                "toMultiplicity": "*",
+                "fromEntity": "GL_ACCT_MASTER_SAVE_RFC_Request",
+                "fromMultiplicity": "1",
+                "name": "GL_ACCT_MASTER_SAVE_RFC_Request_ACCOUNT_NAMES"
+            },
+            {
+                "toEntity": "ACCOUNT_NAMES",
+                "toMultiplicity": "*",
+                "fromEntity": "GL_ACCT_MASTER_SAVE_RFC_Response",
+                "fromMultiplicity": "1",
+                "name": "GL_ACCT_MASTER_SAVE_RFC_Response_ACCOUNT_NAMES"
+            },
+            {
+                "toEntity": "KEYY__3",
+                "toMultiplicity": "1",
+                "fromEntity": "ACCOUNT_NAMES",
+                "fromMultiplicity": "1",
+                "name": "ACCOUNT_NAMES_KEYY__3"
+            },
+            {
+                "toEntity": "DATA__4",
+                "toMultiplicity": "1",
+                "fromEntity": "ACCOUNT_NAMES",
+                "fromMultiplicity": "1",
+                "name": "ACCOUNT_NAMES_DATA__4"
+            },
+            {
+                "toEntity": "RETURN",
+                "toMultiplicity": "*",
+                "fromEntity": "GL_ACCT_MASTER_SAVE_RFC_Request",
+                "fromMultiplicity": "1",
+                "name": "GL_ACCT_MASTER_SAVE_RFC_Request_RETURN"
+            },
+            {
+                "toEntity": "RETURN",
+                "toMultiplicity": "*",
+                "fromEntity": "GL_ACCT_MASTER_SAVE_RFC_Response",
+                "fromMultiplicity": "1",
+                "name": "GL_ACCT_MASTER_SAVE_RFC_Response_RETURN"
+            }
+        ],
+        "entities": [
+            {
+                "name": "GL_ACCT_MASTER_SAVE_RFC_Request",
+                "attributes": [
+                    {
+                        "name": "NO_AUTHORITY_CHECK",
+                        "length": 1,
+                        "description": "Keine Berechtigungsprüfung durchführen",
+                        "type": "string"
+                    },
+                    {
+                        "name": "NO_SAVE_AT_WARNING",
+                        "length": 1,
+                        "description": "Kein Sichern, wenn Warnungen aufgetreten sind",
+                        "type": "string"
+                    },
+                    {
+                        "name": "TESTMODE",
+                        "length": 1,
+                        "description": "Testmodus (kein Sichern)",
+                        "type": "string"
+                    }
+                ],
+                "type": "Import",
+                "baseType": "SAP_RFC_Connector.RFCRequest"
+            },
+            {
+                "name": "ACCOUNT_CCODES",
+                "attributes": [
+                    {
+                        "name": "ACTION",
+                        "length": 1,
+                        "description": "Sachkontenstamm: Aktion für Datensatz",
+                        "type": "string"
+                    }
+                ],
+                "type": "Table",
+                "baseType": "SAP_RFC_Connector.RFCTable"
+            },
+            {
+                "name": "KEYY",
+                "attributes": [
+                    {
+                        "name": "BUKRS",
+                        "length": 4,
+                        "description": "Buchungskreis",
+                        "type": "string"
+                    },
+                    {
+                        "name": "SAKNR",
+                        "length": 10,
+                        "description": "Nummer des Sachkontos",
+                        "type": "string"
+                    }
+                ],
+                "type": "Table",
+                "baseType": "SAP_RFC_Connector.RFCComplexType"
+            },
+            {
+                "name": "DATA",
+                "attributes": [
+                    {
+                        "name": "WAERS",
+                        "length": 5,
+                        "description": "Kontowährung",
+                        "type": "string"
+                    },
+                    {
+                        "name": "XSALH",
+                        "length": 1,
+                        "description": "Kennzeichen: Salden nur in Hauswährung führen",
+                        "type": "string"
+                    },
+                    {
+                        "name": "KDFSL",
+                        "length": 4,
+                        "description": "Schlüssel für Kursdifferenzen auf Fremdwährungskonten",
+                        "type": "string"
+                    },
+                    {
+                        "name": "BEWGP",
+                        "length": 10,
+                        "description": "Bewertungsgruppe",
+                        "type": "string"
+                    },
+                    {
+                        "name": "MWSKZ",
+                        "length": 2,
+                        "description": "Steuerkategorie im Kontenstamm",
+                        "type": "string"
+                    },
+                    {
+                        "name": "XMWNO",
+                        "length": 1,
+                        "description": "Kennzeichen: Steuerkennzeichen kein Mussfeld",
+                        "type": "string"
+                    },
+                    {
+                        "name": "MITKZ",
+                        "length": 1,
+                        "description": "Konto ist Abstimmkonto",
+                        "type": "string"
+                    },
+                    {
+                        "name": "ALTKT",
+                        "length": 10,
+                        "description": "Alternative Kontonummer im Buchungskreis",
+                        "type": "string"
+                    },
+                    {
+                        "name": "WMETH",
+                        "length": 2,
+                        "description": "Kennzeichen: Kontoführung in externem System",
+                        "type": "string"
+                    },
+                    {
+                        "name": "INFKY",
+                        "length": 8,
+                        "description": "Inflationsschlüssel",
+                        "type": "string"
+                    },
+                    {
+                        "name": "TOGRU",
+                        "length": 4,
+                        "description": "Toleranzgruppe für Sachkonten",
+                        "type": "string"
+                    },
+                    {
+                        "name": "XOPVW",
+                        "length": 1,
+                        "description": "Kennzeichen: Offene-Postenverwaltung ?",
+                        "type": "string"
+                    },
+                    {
+                        "name": "XKRES",
+                        "length": 1,
+                        "description": "Kennzeichen: Einzelpostenanzeige über Konto möglich?",
+                        "type": "string"
+                    },
+                    {
+                        "name": "ZUAWA",
+                        "length": 3,
+                        "description": "Schlüssel für die Sortierung nach Zuordnungsnummern",
+                        "type": "string"
+                    },
+                    {
+                        "name": "BEGRU",
+                        "length": 4,
+                        "description": "Berechtigungsgruppe",
+                        "type": "string"
+                    },
+                    {
+                        "name": "BUSAB",
+                        "length": 2,
+                        "description": "Kürzel des Buchhaltungssachbearbeiters",
+                        "type": "string"
+                    },
+                    {
+                        "name": "FSTAG",
+                        "length": 4,
+                        "description": "Feldstatusgruppe",
+                        "type": "string"
+                    },
+                    {
+                        "name": "XINTB",
+                        "length": 1,
+                        "description": "Kennzeichen: Konto nur automatisch bebuchbar?",
+                        "type": "string"
+                    },
+                    {
+                        "name": "XNKON",
+                        "length": 1,
+                        "description": "Kennzeichen: Nachkontieren bei automatischen Buchungen ?",
+                        "type": "string"
+                    },
+                    {
+                        "name": "XMITK",
+                        "length": 1,
+                        "description": "Kennzeichen: Abstimmkonto bei der Buchung eingabebereit?",
+                        "type": "string"
+                    },
+                    {
+                        "name": "FDLEV",
+                        "length": 2,
+                        "description": "Finanzdispo-Ebene",
+                        "type": "string"
+                    },
+                    {
+                        "name": "XGKON",
+                        "length": 1,
+                        "description": "Geldeingangs- / Geldausgangskonto",
+                        "type": "string"
+                    },
+                    {
+                        "name": "FIPOS",
+                        "length": 14,
+                        "description": "Finanzposition",
+                        "type": "string"
+                    },
+                    {
+                        "name": "HBKID",
+                        "length": 5,
+                        "description": "Kurzschlüssel für eine Hausbank",
+                        "type": "string"
+                    },
+                    {
+                        "name": "HKTID",
+                        "length": 5,
+                        "description": "Kurzschlüssel für eine Kontenverbindung",
+                        "type": "string"
+                    },
+                    {
+                        "name": "VZSKZ",
+                        "length": 2,
+                        "description": "Verzinsungskennzeichen",
+                        "type": "string"
+                    },
+                    {
+                        "name": "ZINDT",
+                        "length": 8,
+                        "description": "Stichtag der letzten Verzinsung",
+                        "type": "datetime"
+                    },
+                    {
+                        "name": "ZINRT",
+                        "length": 2,
+                        "description": "Zinsrhythmus in Monaten",
+                        "type": "string"
+                    },
+                    {
+                        "name": "DATLZ",
+                        "length": 8,
+                        "description": "CPU-Datum des letzten Verzinsungslaufs",
+                        "type": "datetime"
+                    },
+                    {
+                        "name": "RECID",
+                        "length": 2,
+                        "description": "Kostentyp",
+                        "type": "string"
+                    },
+                    {
+                        "name": "XSPEB",
+                        "length": 1,
+                        "description": "Kennzeichen: Konto ist zum Buchen gesperrt?",
+                        "type": "string"
+                    },
+                    {
+                        "name": "XLOEB",
+                        "length": 1,
+                        "description": "Kennzeichen: Konto ist zum Löschen vorgemerkt?",
+                        "type": "string"
+                    },
+                    {
+                        "name": "XLGCLR",
+                        "length": 1,
+                        "description": "Ledgergruppenspezifisches Ausgleichen",
+                        "type": "string"
+                    },
+                    {
+                        "name": "MCAKEY",
+                        "length": 5,
+                        "description": "MCA-Schlüssel",
+                        "type": "string"
+                    }
+                ],
+                "type": "Table",
+                "baseType": "SAP_RFC_Connector.RFCComplexType"
+            },
+            {
+                "name": "INFO",
+                "attributes": [
+                    {
+                        "name": "ERDAT",
+                        "length": 8,
+                        "description": "Datum, an dem der Satz hinzugefügt wurde",
+                        "type": "datetime"
+                    },
+                    {
+                        "name": "ERNAM",
+                        "length": 12,
+                        "description": "Name des Sachbearbeiters, der das Objekt hinzugefügt hat",
+                        "type": "string"
+                    }
+                ],
+                "type": "Table",
+                "baseType": "SAP_RFC_Connector.RFCComplexType"
+            },
+            {
+                "name": "ACCOUNT_COA",
+                "attributes": [
+                    {
+                        "name": "ACTION",
+                        "length": 1,
+                        "description": "Sachkontenstamm: Aktion für Datensatz",
+                        "type": "string"
+                    }
+                ],
+                "type": "Import",
+                "baseType": "SAP_RFC_Connector.RFCComplexType"
+            },
+            {
+                "name": "KEYY__0",
+                "attributes": [
+                    {
+                        "name": "KTOPL",
+                        "length": 4,
+                        "description": "Kontenplan",
+                        "type": "string"
+                    },
+                    {
+                        "name": "SAKNR",
+                        "length": 10,
+                        "description": "Nummer des Sachkontos",
+                        "type": "string"
+                    }
+                ],
+                "type": "Import",
+                "baseType": "SAP_RFC_Connector.RFCComplexType"
+            },
+            {
+                "name": "DATA__1",
+                "attributes": [
+                    {
+                        "name": "KTOKS",
+                        "length": 4,
+                        "description": "Kontengruppe Sachkonten",
+                        "type": "string"
+                    },
+                    {
+                        "name": "XBILK",
+                        "length": 1,
+                        "description": "Kennzeichen: Konto ist Bestandskonto?",
+                        "type": "string"
+                    },
+                    {
+                        "name": "GVTYP",
+                        "length": 2,
+                        "description": "Erfolgskontentyp",
+                        "type": "string"
+                    },
+                    {
+                        "name": "FUNC_AREA",
+                        "length": 16,
+                        "description": "Funktionsbereich",
+                        "type": "string"
+                    },
+                    {
+                        "name": "MUSTR",
+                        "length": 10,
+                        "description": "Nummer des Musterkontos",
+                        "type": "string"
+                    },
+                    {
+                        "name": "VBUND",
+                        "length": 6,
+                        "description": "Partner Gesellschaftsnummer",
+                        "type": "string"
+                    },
+                    {
+                        "name": "BILKT",
+                        "length": 10,
+                        "description": "Konzernkontonummer",
+                        "type": "string"
+                    },
+                    {
+                        "name": "XLOEV",
+                        "length": 1,
+                        "description": "Kennzeichen: Konto ist zum Löschen vorgemerkt?",
+                        "type": "string"
+                    },
+                    {
+                        "name": "XSPEA",
+                        "length": 1,
+                        "description": "Kennzeichen: Konto ist zum Anlegen gesperrt?",
+                        "type": "string"
+                    },
+                    {
+                        "name": "XSPEB",
+                        "length": 1,
+                        "description": "Kennzeichen: Konto ist zum Buchen gesperrt?",
+                        "type": "string"
+                    },
+                    {
+                        "name": "XSPEP",
+                        "length": 1,
+                        "description": "Kennzeichen: Konto zum Planen gesperrt?",
+                        "type": "string"
+                    }
+                ],
+                "type": "Import",
+                "baseType": "SAP_RFC_Connector.RFCComplexType"
+            },
+            {
+                "name": "INFO__2",
+                "attributes": [
+                    {
+                        "name": "ERDAT",
+                        "length": 8,
+                        "description": "Datum, an dem der Satz hinzugefügt wurde",
+                        "type": "datetime"
+                    },
+                    {
+                        "name": "ERNAM",
+                        "length": 12,
+                        "description": "Name des Sachbearbeiters, der das Objekt hinzugefügt hat",
+                        "type": "string"
+                    },
+                    {
+                        "name": "SAKAN",
+                        "length": 10,
+                        "description": "Sachkontonummer in signifikanter Länge",
+                        "type": "string"
+                    }
+                ],
+                "type": "Import",
+                "baseType": "SAP_RFC_Connector.RFCComplexType"
+            },
+            {
+                "name": "ACCOUNT_KEYWORDS",
+                "attributes": [
+                    {
+                        "name": "KTOPL",
+                        "length": 4,
+                        "description": "Kontenplan",
+                        "type": "string"
+                    },
+                    {
+                        "name": "SAKNR",
+                        "length": 10,
+                        "description": "Nummer des Sachkontos",
+                        "type": "string"
+                    },
+                    {
+                        "name": "SPRAS",
+                        "length": 1,
+                        "description": "Sprachenschlüssel",
+                        "type": "string"
+                    },
+                    {
+                        "name": "SCHLW",
+                        "length": 30,
+                        "description": "Schlagwort für Sachkonten",
+                        "type": "string"
+                    },
+                    {
+                        "name": "ACTION",
+                        "length": 1,
+                        "description": "Sachkontenstamm: Aktion für Datensatz",
+                        "type": "string"
+                    }
+                ],
+                "type": "Table",
+                "baseType": "SAP_RFC_Connector.RFCTable"
+            },
+            {
+                "name": "ACCOUNT_NAMES",
+                "attributes": [
+                    {
+                        "name": "ACTION",
+                        "length": 1,
+                        "description": "Sachkontenstamm: Aktion für Datensatz",
+                        "type": "string"
+                    }
+                ],
+                "type": "Table",
+                "baseType": "SAP_RFC_Connector.RFCTable"
+            },
+            {
+                "name": "KEYY__3",
+                "attributes": [
+                    {
+                        "name": "KTOPL",
+                        "length": 4,
+                        "description": "Kontenplan",
+                        "type": "string"
+                    },
+                    {
+                        "name": "SAKNR",
+                        "length": 10,
+                        "description": "Nummer des Sachkontos",
+                        "type": "string"
+                    },
+                    {
+                        "name": "SPRAS",
+                        "length": 1,
+                        "description": "Sprachenschlüssel",
+                        "type": "string"
+                    }
+                ],
+                "type": "Table",
+                "baseType": "SAP_RFC_Connector.RFCComplexType"
+            },
+            {
+                "name": "DATA__4",
+                "attributes": [
+                    {
+                        "name": "TXT20",
+                        "length": 20,
+                        "description": "Sachkontenkurztext",
+                        "type": "string"
+                    },
+                    {
+                        "name": "TXT50",
+                        "length": 50,
+                        "description": "Sachkontenlangtext",
+                        "type": "string"
+                    }
+                ],
+                "type": "Table",
+                "baseType": "SAP_RFC_Connector.RFCComplexType"
+            },
+            {
+                "name": "RETURN",
+                "attributes": [
+                    {
+                        "name": "TYPE",
+                        "length": 1,
+                        "description": "Meldungstyp: S Success, E Error, W Warning, I Info, A Abort",
+                        "type": "string"
+                    },
+                    {
+                        "name": "ID",
+                        "length": 20,
+                        "description": "Nachrichtenklasse",
+                        "type": "string"
+                    },
+                    {
+                        "name": "NUMBER",
+                        "length": 3,
+                        "description": "Nachrichtennummer",
+                        "type": "string"
+                    },
+                    {
+                        "name": "MESSAGE",
+                        "length": 220,
+                        "description": "Meldungstext",
+                        "type": "string"
+                    },
+                    {
+                        "name": "LOG_NO",
+                        "length": 20,
+                        "description": "Anwendungs-Log: Protokollnummer",
+                        "type": "string"
+                    },
+                    {
+                        "name": "LOG_MSG_NO",
+                        "length": 6,
+                        "description": "Anwendungs-Log: interne laufende Nummer der Meldung",
+                        "type": "string"
+                    },
+                    {
+                        "name": "MESSAGE_V1",
+                        "length": 50,
+                        "description": "Nachrichtenvariable",
+                        "type": "string"
+                    },
+                    {
+                        "name": "MESSAGE_V2",
+                        "length": 50,
+                        "description": "Nachrichtenvariable",
+                        "type": "string"
+                    },
+                    {
+                        "name": "MESSAGE_V3",
+                        "length": 50,
+                        "description": "Nachrichtenvariable",
+                        "type": "string"
+                    },
+                    {
+                        "name": "MESSAGE_V4",
+                        "length": 50,
+                        "description": "Nachrichtenvariable",
+                        "type": "string"
+                    },
+                    {
+                        "name": "PARAMETER",
+                        "length": 32,
+                        "description": "Parametername",
+                        "type": "string"
+                    },
+                    {
+                        "name": "ROW",
+                        "length": 4,
+                        "description": "Zeile im Parameter",
+                        "type": "int"
+                    },
+                    {
+                        "name": "FIELD",
+                        "length": 30,
+                        "description": "Feld im Parameter",
+                        "type": "string"
+                    },
+                    {
+                        "name": "SYSTEM",
+                        "length": 10,
+                        "description": "System (logisches System) aus dem die Nachricht stammt",
+                        "type": "string"
+                    }
+                ],
+                "type": "Table",
+                "baseType": "SAP_RFC_Connector.RFCTable"
+            },
+            {
+                "name": "GL_ACCT_MASTER_SAVE_RFC_Response",
+                "type": "Export",
+                "baseType": "SAP_RFC_Connector.RFCResponse"
+            }
+        ],
+        "name": "GL_ACCT_MASTER_SAVE_RFC",
+        "type": "mxrfc"
+    }
+]
