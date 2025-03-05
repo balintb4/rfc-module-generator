@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>404 - Page Not Found</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: black;
+            color: #0fffc2;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+        h1 {
+            font-size: 8rem;
+            margin: 0;
+            font-weight: 600;
+            letter-spacing: -5px;
+            text-shadow: 0 0 10px #0fffc2;
+        }
+        p {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            font-weight: 300;
+        }
+        .home-button {
+            margin-top: 40px;
+        }
+        .home-button a {
+            text-decoration: none;
+            color: black;
+            background-color: #0fffc2;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .home-button a:hover {
+            background-color: #39e8b2;
+            transform: scale(1.05);
+        }
+        img {
+            width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% {
+                transform: translatey(0px);
+            }
+            50% {
+                transform: translatey(-20px);
+            }
+            100% {
+                transform: translatey(0px);
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <img src="img/404.gif" alt="404 Image">
+    <h1>404</h1>
+    <p>Oops! The page you're looking for doesn't exist.</p>
+    <div class="home-button">
+        <a href="mendix-generator.html">Go Back Home</a>
+    </div>
+</div>
+</body>
+</html>

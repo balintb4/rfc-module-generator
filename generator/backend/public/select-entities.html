@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Entity and Attribute Selection</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+<section class="step-wizard">
+    <ul class="step-wizard-list">
+        <li class="step-wizard-item current-item">
+            <span class="progress-count">1</span>
+            <span class="progress-label">Upload JSON File</span>
+        </li>
+        <li class="step-wizard-item">
+            <span class="progress-count">2</span>
+            <span class="progress-label">Select Entities</span>
+        </li>
+        <li class="step-wizard-item">
+            <span class="progress-count">3</span>
+            <span class="progress-label">Generate MPK-File</span>
+        </li>
+        <li class="step-wizard-item">
+            <span class="progress-count">4</span>
+            <span class="progress-label">Download MPK-File</span>
+        </li>
+    </ul>
+</section>
+<div class="container">
+    <h3>Select the Entities and Attributes you need</h3>
+
+    <div class="form-group">
+        <input type="text" id="entitySearch" class="form-control" placeholder="Search entity...">
+    </div>
+
+    <div class="content-container" style="position: relative;">
+        <table id="entitiesTable" class="table table-bordered">
+            <thead>
+            <tr>
+                <th><input type="checkbox" id="selectAllEntitiesCheckbox"> Select</th>
+                <th>Entity Name</th>
+                <th>Type</th>
+                <th><input type="checkbox" id="selectAllAttributesCheckbox"> Included Attributes</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+        <div class="select-entities-buttons">
+            <button id="previousButton" class="btn btn-secondary"><i class="bi bi-arrow-left"></i> Previous</button>
+            <button id="submitSelection" class="btn btn-primary">Submit Selection</button>
+        </div>
+
+        <div class="progress-container d-flex justify-content-center align-items-center" id="progressContainer" style="display: none;">
+            <div id="loadingSpinner" class="spinner-border" role="status" style="display: none;">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="select-entities.js"></script>
+<script src="progress-tracker.js"></script>
+</body>
+</html>

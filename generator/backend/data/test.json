@@ -1,0 +1,333 @@
+[
+    {
+        "associations": [
+            {
+                "toEntity": "LANGUAGE",
+                "toMultiplicity": "1",
+                "fromEntity": "BAPI_COSTELEM_CREATEMULTIPLE_Request",
+                "fromMultiplicity": "1",
+                "name": "BAPI_COSTELEM_CREATEMULTIPLE_Request_LANGUAGE"
+            },
+            {
+                "toEntity": "COSTELEMENTLIST",
+                "toMultiplicity": "*",
+                "fromEntity": "BAPI_COSTELEM_CREATEMULTIPLE_Request",
+                "fromMultiplicity": "1",
+                "name": "BAPI_COSTELEM_CREATEMULTIPLE_Request_COSTELEMENTLIST"
+            },
+            {
+                "toEntity": "COSTELEMENTLIST",
+                "toMultiplicity": "*",
+                "fromEntity": "BAPI_COSTELEM_CREATEMULTIPLE_Response",
+                "fromMultiplicity": "1",
+                "name": "BAPI_COSTELEM_CREATEMULTIPLE_Response_COSTELEMENTLIST"
+            },
+            {
+                "toEntity": "EXTENSIONIN",
+                "toMultiplicity": "*",
+                "fromEntity": "BAPI_COSTELEM_CREATEMULTIPLE_Request",
+                "fromMultiplicity": "1",
+                "name": "BAPI_COSTELEM_CREATEMULTIPLE_Request_EXTENSIONIN"
+            },
+            {
+                "toEntity": "EXTENSIONIN",
+                "toMultiplicity": "*",
+                "fromEntity": "BAPI_COSTELEM_CREATEMULTIPLE_Response",
+                "fromMultiplicity": "1",
+                "name": "BAPI_COSTELEM_CREATEMULTIPLE_Response_EXTENSIONIN"
+            },
+            {
+                "toEntity": "RETURN",
+                "toMultiplicity": "*",
+                "fromEntity": "BAPI_COSTELEM_CREATEMULTIPLE_Request",
+                "fromMultiplicity": "1",
+                "name": "BAPI_COSTELEM_CREATEMULTIPLE_Request_RETURN"
+            },
+            {
+                "toEntity": "RETURN",
+                "toMultiplicity": "*",
+                "fromEntity": "BAPI_COSTELEM_CREATEMULTIPLE_Response",
+                "fromMultiplicity": "1",
+                "name": "BAPI_COSTELEM_CREATEMULTIPLE_Response_RETURN"
+            }
+        ],
+        "entities": [
+            {
+                "name": "BAPI_COSTELEM_CREATEMULTIPLE_Request",
+                "attributes": [
+                    {
+                        "name": "COAREA",
+                        "length": 4,
+                        "description": "Controlling area",
+                        "type": "string"
+                    },
+                    {
+                        "name": "COSTELEMCLASS",
+                        "length": 1,
+                        "description": "Classification: 1 = primary, 2 = secondary",
+                        "type": "string"
+                    },
+                    {
+                        "name": "TESTRUN",
+                        "length": 1,
+                        "description": "Indicator: Test run",
+                        "type": "string"
+                    }
+                ],
+                "type": "Import",
+                "baseType": "SAPBAPIConnector.BAPIRequest"
+            },
+            {
+                "name": "LANGUAGE",
+                "attributes": [
+                    {
+                        "name": "LANGU",
+                        "length": 1,
+                        "description": "Language Key",
+                        "type": "string"
+                    },
+                    {
+                        "name": "LANGU_ISO",
+                        "length": 2,
+                        "description": "2-Character SAP Language Code",
+                        "type": "string"
+                    }
+                ],
+                "type": "Import",
+                "baseType": "SAPBAPIConnector.BAPIComplexType"
+            },
+            {
+                "name": "COSTELEMENTLIST",
+                "attributes": [
+                    {
+                        "name": "COST_ELEM",
+                        "length": 10,
+                        "description": "Cost Element",
+                        "type": "string"
+                    },
+                    {
+                        "name": "VALID_FROM",
+                        "length": 8,
+                        "description": "Valid-From Date",
+                        "type": "datetime"
+                    },
+                    {
+                        "name": "VALID_TO",
+                        "length": 8,
+                        "description": "Valid To Date",
+                        "type": "datetime"
+                    },
+                    {
+                        "name": "CELEM_CATEGORY",
+                        "length": 2,
+                        "description": "Cost element category",
+                        "type": "string"
+                    },
+                    {
+                        "name": "CELEM_ATTRIBUTE",
+                        "length": 8,
+                        "description": "Cost element attributes",
+                        "type": "string"
+                    },
+                    {
+                        "name": "RECORD_QUANTITY",
+                        "length": 1,
+                        "description": "Indicator for Recording Consumption Quantities",
+                        "type": "string"
+                    },
+                    {
+                        "name": "UNIT_OF_MEASURE",
+                        "length": 3,
+                        "description": "Unit of Measure for Display",
+                        "type": "string"
+                    },
+                    {
+                        "name": "UNIT_OF_MEASURE_ISO",
+                        "length": 3,
+                        "description": "Unit of measure for display in ISO code",
+                        "type": "string"
+                    },
+                    {
+                        "name": "DEFAULT_COSTCENTER",
+                        "length": 10,
+                        "description": "Cost Center",
+                        "type": "string"
+                    },
+                    {
+                        "name": "DEFAULT_ORDER",
+                        "length": 12,
+                        "description": "Order Number",
+                        "type": "string"
+                    },
+                    {
+                        "name": "JV_REC_IND",
+                        "length": 2,
+                        "description": "Recovery Indicator",
+                        "type": "string"
+                    },
+                    {
+                        "name": "NAME",
+                        "length": 20,
+                        "description": "General Name",
+                        "type": "string"
+                    },
+                    {
+                        "name": "DESCRIPT",
+                        "length": 40,
+                        "description": "Description",
+                        "type": "string"
+                    },
+                    {
+                        "name": "FUNC_AREA",
+                        "length": 4,
+                        "description": "Functional Area",
+                        "type": "string"
+                    },
+                    {
+                        "name": "FUNC_AREA_LONG",
+                        "length": 16,
+                        "description": "Functional Area",
+                        "type": "string"
+                    }
+                ],
+                "type": "Table",
+                "baseType": "SAPBAPIConnector.BAPITable"
+            },
+            {
+                "name": "EXTENSIONIN",
+                "attributes": [
+                    {
+                        "name": "STRUCTURE",
+                        "length": 30,
+                        "description": "Structure name of  BAPI table extension",
+                        "type": "string"
+                    },
+                    {
+                        "name": "VALUEPART1",
+                        "length": 240,
+                        "description": "Data part of BAPI extension parameter",
+                        "type": "string"
+                    },
+                    {
+                        "name": "VALUEPART2",
+                        "length": 240,
+                        "description": "Data part of BAPI extension parameter",
+                        "type": "string"
+                    },
+                    {
+                        "name": "VALUEPART3",
+                        "length": 240,
+                        "description": "Data part of BAPI extension parameter",
+                        "type": "string"
+                    },
+                    {
+                        "name": "VALUEPART4",
+                        "length": 240,
+                        "description": "Data part of BAPI extension parameter",
+                        "type": "string"
+                    }
+                ],
+                "type": "Table",
+                "baseType": "SAPBAPIConnector.BAPITable"
+            },
+            {
+                "name": "RETURN",
+                "attributes": [
+                    {
+                        "name": "TYPE",
+                        "length": 1,
+                        "description": "Message type: S Success, E Error, W Warning, I Info, A Abort",
+                        "type": "string"
+                    },
+                    {
+                        "name": "ID",
+                        "length": 20,
+                        "description": "Message Class",
+                        "type": "string"
+                    },
+                    {
+                        "name": "NUMBER",
+                        "length": 3,
+                        "description": "Message Number",
+                        "type": "string"
+                    },
+                    {
+                        "name": "MESSAGE",
+                        "length": 220,
+                        "description": "Message Text",
+                        "type": "string"
+                    },
+                    {
+                        "name": "LOG_NO",
+                        "length": 20,
+                        "description": "Application log: log number",
+                        "type": "string"
+                    },
+                    {
+                        "name": "LOG_MSG_NO",
+                        "length": 6,
+                        "description": "Application log: Internal message serial number",
+                        "type": "string"
+                    },
+                    {
+                        "name": "MESSAGE_V1",
+                        "length": 50,
+                        "description": "Message Variable",
+                        "type": "string"
+                    },
+                    {
+                        "name": "MESSAGE_V2",
+                        "length": 50,
+                        "description": "Message Variable",
+                        "type": "string"
+                    },
+                    {
+                        "name": "MESSAGE_V3",
+                        "length": 50,
+                        "description": "Message Variable",
+                        "type": "string"
+                    },
+                    {
+                        "name": "MESSAGE_V4",
+                        "length": 50,
+                        "description": "Message Variable",
+                        "type": "string"
+                    },
+                    {
+                        "name": "PARAMETER",
+                        "length": 32,
+                        "description": "Parameter Name",
+                        "type": "string"
+                    },
+                    {
+                        "name": "ROW",
+                        "length": 4,
+                        "description": "Lines in parameter",
+                        "type": "int"
+                    },
+                    {
+                        "name": "FIELD",
+                        "length": 30,
+                        "description": "Field in parameter",
+                        "type": "string"
+                    },
+                    {
+                        "name": "SYSTEM",
+                        "length": 10,
+                        "description": "Logical system from which message originates",
+                        "type": "string"
+                    }
+                ],
+                "type": "Table",
+                "baseType": "SAPBAPIConnector.BAPITable"
+            },
+            {
+                "name": "BAPI_COSTELEM_CREATEMULTIPLE_Response",
+                "type": "Export",
+                "baseType": "SAPBAPIConnector.BAPIResponse"
+            }
+        ],
+        "name": "BAPI_COSTELEM_CREATEMULTIPLE",
+        "type": "mxbapi"
+    }
+]

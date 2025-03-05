@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select Attributes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <section class="step-wizard">
+        <ul class="step-wizard-list">
+          <li class="step-wizard-item current-item">
+            <span class="progress-count">1</span>
+            <span class="progress-label">Upload JSON File</span>
+          </li>
+          <li class="step-wizard-item">
+            <span class="progress-count">2</span>
+            <span class="progress-label">Select Entities</span>
+          </li>
+          <li class="step-wizard-item">
+            <span class="progress-count">3</span>
+            <span class="progress-label">Generate MPK-File</span>
+          </li>
+          <li class="step-wizard-item">
+            <span class="progress-count">4</span>
+            <span class="progress-label">Download MPK-File</span>
+          </li>
+        </ul>
+      </section>
+    <div class="container">
+        <h3>Select Attributes for <span id="entityName"></span></h3>
+        <div class="button-group">
+            <button id="selectAllAttributes">Select All</button>
+            <button id="deselectAllAttributes">Deselect All</button>
+        </div>        
+        <div id="attributesContainer">
+
+      </div>
+      
+        <div class="navigation">
+            <button id="backButton">Back</button>
+            <button id="saveButton">Save</button>
+        </div>
+    </div>
+    <script src="select-attributes.js"></script>
+    <script src="progress-tracker.js"></script>
+</body>
+</html>

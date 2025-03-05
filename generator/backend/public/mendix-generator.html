@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS -->
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <title>Mendix-Generator</title>
+</head>
+<body>
+<div class="header">
+    <img src="/img/avocodo-logo.jpg" alt="Avocado Logo">
+
+    <nav class="navbar">
+        <a href="https://docs.google.com/document/d/1-RrqLQRgfrWicMX93mXLVYXpN9rnet4U9ibNC0YxfBE/edit?usp=sharing" target="_blank">
+            <img src="/img/google-docs.png" alt="Google Docs Icon" class="doc-icon">
+        </a>
+
+        <a href="documentation.html">
+            <img src="/img/questions.png" alt="Documentation Icon" class="doc-icon">
+        </a>
+
+        <a href="mendix-generator.html">
+            <img src="/img/home-button.png" class="navbar-home">
+        </a>
+
+    </nav>
+</div>
+
+<div class="home-container">
+    <div class="content">
+        <p>The Model Creator for SAP Integrations allows you to generate a domain model for SAP assets. This generated module is a building block for your Mendix app in SAP integration.</p>
+
+        <button id="generateDomainModel" class="btn btn-primary">Generate Domain Model</button>
+    </div>
+</div>
+
+<script src="mendix-generator.js"></script>
+</body>
+</html>

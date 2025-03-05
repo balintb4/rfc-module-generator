@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Model Creator for SAP Integrations</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <div class="upload-file-container">
+    <section class="step-wizard">
+      <ul class="step-wizard-list">
+        <li class="step-wizard-item current-item">
+          <span class="progress-count">1</span>
+          <span class="progress-label">Upload JSON File</span>
+        </li>
+        <li class="step-wizard-item">
+          <span class="progress-count">2</span>
+          <span class="progress-label">Select Entities</span>
+        </li>
+        <li class="step-wizard-item">
+          <span class="progress-count">3</span>
+          <span class="progress-label">Generate MPK-File</span>
+        </li>
+        <li class="step-wizard-item">
+          <span class="progress-count">4</span>
+          <span class="progress-label">Download MPK-File</span>
+        </li>
+      </ul>
+    </section>
+    <div class="index-container">
+      <div class="header-container">
+        <img src="img/sap-logo.png" alt="SAP Logo" class="logo">
+        <p>Model Creator for SAP Integrations</p>
+      </div>
+      <div class="upload-section">
+        <p>Upload SAP RFC Schema File</p>
+        <div class="upload-box" id="uploadBox">
+          <input type="file" class="filepond" id="fileInput" accept=".json">
+      </div>      
+      </div>
+      <div class="navigation">
+        <button id="previous-mendix-generator"><i class="bi bi-arrow-left"></i>Previous</button>
+        <button id="nextButton" >Next</button>
+      </div>
+      <div id="alertContainer"></div>
+    </div>
+    
+    <script src="index.js"></script>
+    <script src="progress-tracker.js"></script>
+  </body>
+  </div>
+</html>

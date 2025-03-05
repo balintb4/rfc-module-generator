@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Download MPK File</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <section class="step-wizard">
+      <ul class="step-wizard-list">
+        <li class="step-wizard-item current-item">
+          <span class="progress-count">1</span>
+          <span class="progress-label">Upload JSON File</span>
+        </li>
+        <li class="step-wizard-item">
+          <span class="progress-count">2</span>
+          <span class="progress-label">Select Entities</span>
+        </li>
+        <li class="step-wizard-item">
+          <span class="progress-count">3</span>
+          <span class="progress-label">Generate MPK-File</span>
+        </li>
+        <li class="step-wizard-item">
+          <span class="progress-count">4</span>
+          <span class="progress-label">Download MPK-File</span>
+        </li>
+      </ul>
+    </section>
+    <div class="download-container">
+      <button id="homeBtn" class="home-button">
+        <img src="img/home-button.png" alt="">
+      </button>
+      <h1>Download MPK File</h1>
+      <div class="button-group">
+        <button id="previousButton">
+          <i class="bi bi-arrow-left"></i> Json Upload
+        </button>
+        <button id="downloadButton">Download</button>
+      </div>
+    </div>
+  <script src="download-mpk.js"></script>
+  <script src="progress-tracker.js"></script>
+</body>
+</html>

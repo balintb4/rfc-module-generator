@@ -1,0 +1,26 @@
+# Ignore all node_modules directories
+node_modules/
+
+
+# Do not ignore specific .js files in generator/backend/public
+!generator/backend/public/*.js
+
+# Now re-ignore all .js files in the generator/backend/public directory
+generator/backend/public/*.js
+
+# Do not ignore specific .js files in generator/backend/public again
+!generator/backend/public/select-entities.js
+!generator/backend/public/select-attributes.js
+!generator/backend/public/index.js
+
+
+# Ignore all .mpk files
+*.mpk
+
+
+
+# Ignore all .js files
+*.js
+
+# Ignore idea files
+.idea/
