@@ -8,6 +8,7 @@ import { StatusCodes } from "http-status-codes";
 const app = express();
 const port = 3000;
 const dir = path.join(__dirname, 'public')
+var morgan = require('morgan')
 
 app.get("/", (req, res) => {
     res.sendFile(path.join(dir, "mendix-generator.html"));
@@ -16,6 +17,8 @@ app.get("/", (req, res) => {
 app.use(express.static(dir));
 app.use(express.json());
 app.use(bodyParser.json());
+
+app.use(morgan('combined'));
 
 app.use("/api/generator", generatorRouter);
 
