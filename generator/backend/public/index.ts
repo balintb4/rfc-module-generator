@@ -61,9 +61,9 @@ document.addEventListener('DOMContentLoaded', () => {
       displayWarningAlert('No file selected');
       return;
     }
-
+  
     try {
-      const response = await fetch('http://localhost:3000/api/generator/create', {
+      const response = await fetch('/api/generator/create', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

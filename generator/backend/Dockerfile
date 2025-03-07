@@ -1,17 +1,23 @@
 # Basis-Image für Node.js
-FROM node:18-alpine 
+FROM node:18-alpine  
 
-WORKDIR /app
+# Arbeitsverzeichnis setzen
+WORKDIR /app  
 
-# Package.json & Abhängigkeiten installieren
-COPY package*.json package-lock.json ./
+# Package.json & package-lock.json kopieren
+COPY package*.json ./
+
+# Installiere Abhängigkeiten
 RUN npm install
 
-# Den Rest des Codes kopieren
+# Den restlichen Code kopieren
 COPY . .
 
-# Port freigeben (falls dein Backend auf 3000 läuft)
-EXPOSE 3000
+# TypeScript für das Backend & `public/` kompilieren
+RUN npm run prestart
 
-# Start-Befehl (wird automatisch `npx tsc` vorher ausführen)
+# Port freigeben (falls dein Backend auf 3000 läuft)
+EXPOSE 3000  
+
+# Start-Befehl mit npm start
 CMD ["npm", "start"]

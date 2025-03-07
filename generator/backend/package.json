@@ -1,10 +1,12 @@
 {
   "scripts": {
-    "client-dev": "npx tsc --watch --project public",
-    "server-dev": "npx nodemon app.ts",
-    "prestart": "npx tsc",
-    "start": "node app.js"
-  },
+  "client-dev": "cd public && npm start",
+  "server-dev": "npx nodemon app.ts",
+  "prestart": "npx tsc && npx tsc --project public",
+  "build": "npx tsc && npx tsc --project public",
+  "start": "npx tsc --project public && node app.js"
+}
+,
   "dependencies": {
     "@types/d3": "^7.4.3",
     "@types/http-status-codes": "^1.2.0",
