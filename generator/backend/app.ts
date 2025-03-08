@@ -4,6 +4,10 @@ import generatorRouter from "./router/generator-router";
 import bodyParser from "body-parser";
 import "express-async-errors";
 import { StatusCodes } from "http-status-codes";
+const BASE_URL =
+  window.location.hostname === 'localhost'
+    ? 'http://localhost:3000'
+    : 'http://if200147.cloud.htl-leonding.ac.at:30080';
 
 const app = express();
 const port = 3000;
@@ -56,6 +60,6 @@ app.use((err: any, req: express.Request, res: express.Response, next: express.Ne
   });
 
 app.listen(port, () => {
-    console.log(`Server is listening at http://localhost:${port}`);
+    console.log(`Server is listening at ${BASE_URL}/${port}`);
 });
 
