@@ -59,7 +59,8 @@ app.use((err: any, req: express.Request, res: express.Response, next: express.Ne
     });
   });
 
-app.listen(port, () => {
-    console.log(`Server is listening at ${BASE_URL}/${port}`);
+  app.listen(port, "0.0.0.0", () => {
+    console.log(`Server is listening at http://localhost:${port} (intern im Container)`);
 });
+
 
