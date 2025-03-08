@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 
 app.use(morgan('combined'));
 
-app.use("https://if200147.cloud.htl-leonding.ac.at/api/generator", generatorRouter);
+app.use("/api/generator", generatorRouter);
 
 app.get("/mendix-generator.html", (req, res) => {
     res.sendFile(path.join(dir, "mendix-generator.html"));
