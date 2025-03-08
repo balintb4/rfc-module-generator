@@ -1,3 +1,9 @@
+const BASE_URL =
+  window.location.hostname === 'localhost'
+    ? 'http://localhost:3000'
+    : 'http://if200147.cloud.htl-leonding.ac.at:30080';
+
+
 document.addEventListener('DOMContentLoaded', async function() {
     const urlParams = new URLSearchParams(window.location.search);
     const entityName = urlParams.get('entity');
@@ -22,7 +28,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             attributes: Attribute[];
         }
 
-        const response = await fetch('/api/generator/entities');
+        const response = await fetch(`${BASE_URL}/api/generator/entities`);
         const entities: Entity[] = await response.json();
         const entity = entities.find((e: Entity) => e.name === entityName);
 

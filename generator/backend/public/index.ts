@@ -5,6 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const uploadBox = document.getElementById('uploadBox') as HTMLDivElement;
   
   let jsonObject: any;
+  const BASE_URL =
+  window.location.hostname === 'localhost'
+    ? 'http://localhost:3000'
+    : 'http://if200147.cloud.htl-leonding.ac.at:30080';
 
   const displayMessage = (message: string) => {
     const statusMessage = document.getElementById('statusMessage') as HTMLParagraphElement;
@@ -63,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   
     try {
-      const response = await fetch('/api/generator/create', {
+      const response = await fetch(`${BASE_URL}/api/generator/create`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

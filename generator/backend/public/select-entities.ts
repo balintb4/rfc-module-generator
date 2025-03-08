@@ -1,8 +1,14 @@
+
+
 document.addEventListener('DOMContentLoaded', async function () {
     let entities: any[] = [];
+    const BASE_URL =
+  window.location.hostname === 'localhost'
+    ? 'http://localhost:3000'
+    : 'http://if200147.cloud.htl-leonding.ac.at:30080';
 
     try {
-        const response = await fetch('/api/generator/entities');
+        const response = await fetch(`${BASE_URL}/api/generator/entities`);
         entities = await response.json();
 
         const tableBody = document.getElementById('entitiesTable')!.getElementsByTagName('tbody')[0];
