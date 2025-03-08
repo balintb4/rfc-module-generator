@@ -10,6 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
     ? 'http://localhost:3000'
     : 'http://if200147.cloud.htl-leonding.ac.at:30080';
 
+    console.log("🌍 Aktuelles `BASE_URL`:", BASE_URL);
+console.log("🌍 window.location.hostname:", window.location.hostname);
+
+
   const displayMessage = (message: string) => {
     const statusMessage = document.getElementById('statusMessage') as HTMLParagraphElement;
     if (statusMessage) {
