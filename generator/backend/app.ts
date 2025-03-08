@@ -4,10 +4,6 @@ import generatorRouter from "./router/generator-router";
 import bodyParser from "body-parser";
 import "express-async-errors";
 import { StatusCodes } from "http-status-codes";
-const BASE_URL =
-  window.location.hostname === 'localhost'
-    ? 'http://localhost:3000'
-    : 'http://if200147.cloud.htl-leonding.ac.at:30080';
 
 const app = express();
 const port = 3000;
