@@ -10,38 +10,40 @@ const port = 3000;
 const dir = path.join(__dirname, "public");
 var morgan = require("morgan");
 
-// Feste Base-URL
+// Feste Base-URL für das Frontend (aber NICHT für Express-Routen!)
 const BASE_URL = "https://if200147.cloud.htl-leonding.ac.at";
 
-app.get(`${BASE_URL}/`, (req, res) => {
-    res.sendFile(path.join(dir, "mendix-generator.html"));
-});
-
-app.use(`${BASE_URL}`, express.static(dir));
+// Statische Dateien bereitstellen
+app.use(express.static(dir));
 app.use(express.json());
 app.use(bodyParser.json());
-
 app.use(morgan("combined"));
 
-app.use(`${BASE_URL}/api/generator`, generatorRouter);
+// API-Routen (KEIN BASE_URL hier!)
+app.use("/api/generator", generatorRouter);
 
-app.get(`${BASE_URL}/mendix-generator.html`, (req, res) => {
+// HTML-Seiten-Routen (KEIN BASE_URL hier!)
+app.get("/", (req, res) => {
     res.sendFile(path.join(dir, "mendix-generator.html"));
 });
 
-app.get(`${BASE_URL}/generate-mendix-app.html`, (req, res) => {
+app.get("/mendix-generator.html", (req, res) => {
+    res.sendFile(path.join(dir, "mendix-generator.html"));
+});
+
+app.get("/generate-mendix-app.html", (req, res) => {
     res.sendFile(path.join(dir, "generate-mendix-app.html"));
 });
 
-app.get(`${BASE_URL}/index.html`, (req, res) => {
+app.get("/index.html", (req, res) => {
     res.sendFile(path.join(dir, "index.html"));
 });
 
-app.get(`${BASE_URL}/select-entities.html`, (req, res) => {
+app.get("/select-entities.html", (req, res) => {
     res.sendFile(path.join(dir, "select-entities.html"));
 });
 
-app.get(`${BASE_URL}/download-mpk.html`, (req, res) => {
+app.get("/download-mpk.html", (req, res) => {
     res.sendFile(path.join(dir, "download-mpk.html"));
 });
 
@@ -58,6 +60,7 @@ app.use((err: any, req: express.Request, res: express.Response, next: express.Ne
     });
 });
 
+// Server starten (KEIN BASE_URL hier!)
 app.listen(port, "0.0.0.0", () => {
     console.log(`Server is listening at http://localhost:${port} (intern im Container)`);
 });
