@@ -7,10 +7,9 @@ import { StatusCodes } from "http-status-codes";
 
 const app = express();
 const port = 3000;
-const dir = path.join(__dirname, "public");
+const dir = path.join(__dirname, "dist");
 var morgan = require("morgan");
 
-// Feste Base-URL für das Frontend (aber NICHT für Express-Routen!)
 const BASE_URL = "https://if200147.cloud.htl-leonding.ac.at";
 
 // Statische Dateien bereitstellen
@@ -19,10 +18,8 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(morgan("combined"));
 
-// API-Routen (KEIN BASE_URL hier!)
 app.use("/api/generator", generatorRouter);
 
-// HTML-Seiten-Routen (KEIN BASE_URL hier!)
 app.get("/", (req, res) => {
     res.sendFile(path.join(dir, "mendix-generator.html"));
 });
