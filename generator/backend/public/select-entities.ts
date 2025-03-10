@@ -2,13 +2,10 @@
 
 document.addEventListener('DOMContentLoaded', async function () {
     let entities: any[] = [];
-    const BASE_URL =
-  window.location.hostname === 'localhost'
-    ? 'http://localhost:3000'
-    : 'http://if200147.cloud.htl-leonding.ac.at:30080';
+    
 
     try {
-        const response = await fetch(`${BASE_URL}/api/generator/entities`);
+        const response = await fetch(`https://if200147.cloud.htl-leonding.ac.at/api/generator/entities`);
         entities = await response.json();
 
         const tableBody = document.getElementById('entitiesTable')!.getElementsByTagName('tbody')[0];
@@ -113,7 +110,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             try {
                 advanceProgress(1);
 
-                const response = await fetch('/api/generator/submit-selection', {
+                const response = await fetch('https://if200147.cloud.htl-leonding.ac.at/api/generator/submit-selection', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -128,12 +125,12 @@ document.addEventListener('DOMContentLoaded', async function () {
                 loadingSpinner.style.display = 'none';
                 progressContainer.style.display = 'none';
                 advanceProgress(2);
-                window.location.href = 'download-mpk.html';
+                window.location.href = 'https://if200147.cloud.htl-leonding.ac.at/download-mpk.html';
 
             } catch (error) {
                 console.error('Error submitting selection:', error);
                 alert('Failed to submit selection.');
-                window.location.href = 'index.html';
+                window.location.href = 'https://if200147.cloud.htl-leonding.ac.at/index.html';
             }
         });
     } catch (error) {
@@ -175,5 +172,5 @@ function updateAttributeLinks(entities: any[]) {
 
 document.getElementById('previousButton')?.addEventListener('click', () => {
     localStorage.removeItem('selectedEntitiesAndAttributes');
-    window.location.href = 'index.html';
+    window.location.href = 'https://if200147.cloud.htl-leonding.ac.at/index.html';
 });

@@ -5,13 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const uploadBox = document.getElementById('uploadBox') as HTMLDivElement;
   
   let jsonObject: any;
-  const BASE_URL =
-  window.location.hostname === 'localhost'
-    ? 'http://localhost:3000'
-    : 'http://if200147.cloud.htl-leonding.ac.at:30080';
-
-    console.log("🌍 Aktuelles `BASE_URL`:", BASE_URL);
-console.log("🌍 window.location.hostname:", window.location.hostname);
 
 
   const displayMessage = (message: string) => {
@@ -71,7 +64,7 @@ console.log("🌍 window.location.hostname:", window.location.hostname);
     }
   
     try {
-      const response = await fetch(`${BASE_URL}/api/generator/create`, {
+      const response = await fetch(`https://if200147.cloud.htl-leonding.ac.at/api/generator/create`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -88,7 +81,7 @@ console.log("🌍 window.location.hostname:", window.location.hostname);
 
       advanceProgress(0);
 
-      window.location.href = '/select-entities.html';
+      window.location.href = "https://if200147.cloud.htl-leonding.ac.at/select-entities.html";
     } catch (error) {
       displayMessage('Es ist ein Fehler aufgetreten: ' + (error as Error).message);
     }
@@ -118,6 +111,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const previousMendixGeneratorBtn = document.getElementById('previous-mendix-generator') as HTMLButtonElement;
 
   previousMendixGeneratorBtn.addEventListener('click', () => {
-    window.location.href = 'mendix-generator.html';
+    window.location.href = 'https://if200147.cloud.htl-leonding.ac.at/mendix-generator.html';
   });
 });
