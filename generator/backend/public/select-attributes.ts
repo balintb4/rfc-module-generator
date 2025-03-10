@@ -1,9 +1,3 @@
-const BASE_URL =
-  window.location.hostname === 'localhost'
-    ? 'http://localhost:3000'
-    : 'http://if200147.cloud.htl-leonding.ac.at:30080';
-
-
 document.addEventListener('DOMContentLoaded', async function() {
     const urlParams = new URLSearchParams(window.location.search);
     const entityName = urlParams.get('entity');
@@ -28,7 +22,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             attributes: Attribute[];
         }
 
-        const response = await fetch(`${BASE_URL}/api/generator/entities`);
+        const response = await fetch(`https://if200147.cloud.htl-leonding.ac.at/api/generator/entities`);
         const entities: Entity[] = await response.json();
         const entity = entities.find((e: Entity) => e.name === entityName);
 
@@ -75,7 +69,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                         const selectedAttributes = Array.from(attributesContainer.querySelectorAll('input[type="checkbox"]:checked')).map((checkbox: Element) => (checkbox as HTMLInputElement).value);
                         localStorage.setItem(`selectedAttributes_${entityName}`, JSON.stringify(selectedAttributes));
                         saveEntityAndAttributes(entityName, selectedAttributes);
-                        window.location.href = 'select-entities.html';
+                        window.location.href = 'https://if200147.cloud.htl-leonding.ac.at/select-entities.html';
                     }
                 });
             }
@@ -83,7 +77,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             const backButton = document.getElementById('backButton');
             if (backButton) {
                 backButton.addEventListener('click', () => {
-                    window.location.href = 'select-entities.html';
+                    window.location.href = 'https://if200147.cloud.htl-leonding.ac.at/select-entities.html';
                 });
             }
         }

@@ -7,7 +7,7 @@ import { StatusCodes } from "http-status-codes";
 
 const app = express();
 const port = 3000;
-const dir = path.join(__dirname, "dist");
+const dir = path.join(__dirname, "public");
 var morgan = require("morgan");
 
 const BASE_URL = "https://if200147.cloud.htl-leonding.ac.at";

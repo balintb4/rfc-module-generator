@@ -5,13 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     homeBtn?.addEventListener('click', () => {
         removeMendixAppFormLocalStorageItems();
-        window.location.href = 'mendix-generator.html';
+        window.location.href = 'https://if200147.cloud.htl-leonding.ac.at/mendix-generator.html';
     });
 
     downloadButton.addEventListener('click', (event) => {
         event.preventDefault();
 
-        window.location.href = '/api/generator/download-mpk';
+        window.location.href = 'https://if200147.cloud.htl-leonding.ac.at/api/generator/download-mpk';
         advanceProgress(3);
         downloadButton.disabled = true;
 
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     previousButton.addEventListener('click', () => {
         removeMendixAppFormLocalStorageItems();
-        window.location.href = 'index.html';
+        window.location.href = 'https://if200147.cloud.htl-leonding.ac.at/index.html';
     });
 });
 
