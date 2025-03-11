@@ -21,7 +21,7 @@ app.use(morgan("combined"));
 app.use("/api/generator", generatorRouter);
 
 app.get("/", (req, res) => {
-    res.sendFile(path.join(dir, "index.html"));
+    res.sendFile(path.join(dir, "mendix-generator.html"));
 });
 
 app.get("/mendix-generator.html", (req, res) => {
